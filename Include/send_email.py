@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 def send_email(email, middle_height, count):
-    html = Template(Path('email.html').read_text())
+    html = Template(Path('./Include/email.html').read_text())
 
     email_msg = EmailMessage()
     email_msg['from'] = 'Data collector app'
@@ -17,5 +17,5 @@ def send_email(email, middle_height, count):
     with smtplib.SMTP(host='smtp.gmail.com', port=587) as smtp:
         smtp.ehlo()
         smtp.starttls()
-        smtp.login('azikov.igor.es@gmail.com', '<enter_your_password>>')
+        smtp.login('<email_login>', '<email_password>')
         smtp.send_message(email_msg)
