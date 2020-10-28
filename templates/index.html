@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data collector app</title>
+    <link href="../static/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Collecting height</h1>
+        <h3>Please fill the entries</h3>
+        <form action="{{url_for('success')}}" method="POST">
+            {{error | safe}}
+            <input title="Your email" placeholder="Enter your email" type="email" name="email" required><br>
+            <input title="Your height" placeholder="Enter your height in cm" type="number" min="50" max="300" step="0.1"
+                   name="height"
+                   required><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action="{{url_for('success_file')}}" method="POST" enctype="multipart/form-data">
+            {{file_error | safe}}
+            <input type="file" name="file"><br>
+            <button type="submit">Submit file</button>
+        </form>
+       {% if btn is defined %}
+            {% include btn %}
+        {% endif %}
+    </div>
+</body>
+</html>

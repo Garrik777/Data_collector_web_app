@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data collector app</title>
+    <link href="../static/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <p>Thank you for submission<br>
+         {{message | safe}}
+            <a href={{url_for('home')}}>Home page</a>
+        </p>
+    </div>
+</body>
+</html>
