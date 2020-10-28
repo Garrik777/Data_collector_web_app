@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from db_config import Config
-from send_email import send_email
+from Include.db_config import Config
+from Include.send_email import send_email
 from sqlalchemy.sql import func
 from werkzeug.utils import secure_filename
 import os
